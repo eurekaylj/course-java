@@ -7,9 +7,11 @@ module Part3 {
     opens cn.edu.ncu.eureka.guessWords.controller;
     opens cn.edu.ncu.eureka.guessWords.view;
     opens cn.edu.ncu.eureka.guessWords;
-    opens cn.edu.ncu.eureka.calendar;
+    opens cn.edu.ncu.eureka.calendarByGUI;
+    opens cn.edu.ncu.eureka.calendarByConsole;
 
     exports cn.edu.ncu.eureka.guessWords.controller;
     exports cn.edu.ncu.eureka.guessWords;
-    exports cn.edu.ncu.eureka.calendar;
+    exports cn.edu.ncu.eureka.calendarByGUI;
+    exports cn.edu.ncu.eureka.calendarByConsole;
 }

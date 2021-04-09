@@ -1,4 +1,4 @@
-package cn.edu.ncu.eureka.calendar;
+package cn.edu.ncu.eureka.calendarByConsole;
 
 import java.time.LocalDate;
 
@@ -46,25 +46,14 @@ public class Calendar {
         System.out.printf("%10s年\n", year);
         for (int month = 1; month < 13; month++) {
             System.out.printf("\n%10s月\n", month);
-            System.out.println("\n日 一  二  三  四  五   六");
+            System.out.println("\n  日  一  二   三   四  五  六");
             int firstWeek = getFirstWeek(year, month);
-            System.out.printf("%" + (firstWeek * 3) + "s", " ");
+            System.out.printf("%" + (firstWeek*4) + "s", " ");
             for (int day = 1; day < getDays(year, month); day++) {
                 if ((day + firstWeek - 1) % 7 == 0)
                     System.out.println();
-                System.out.printf("%3d", day);
+                System.out.printf("%4d", day);
             }
         }
-    }
-
-    /**
-     * 获得某年某月月历
-     * @param year 年
-     * @param month 月
-     * @return 月历
-     */
-    public String getCalendarStr(int year, int month) {
-        int firstDay = getFirstWeek(year, month);
-
     }
 }
