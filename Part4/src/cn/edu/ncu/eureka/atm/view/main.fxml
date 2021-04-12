@@ -7,25 +7,51 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="titleLab" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.ncu.eureka.atm.view.Main">
+<AnchorPane fx:id="titleLab"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cn.edu.ncu.eureka.atm.controller.ATMAction">
    <children>
-      <TextArea fx:id="display" layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="depositBtn" layoutX="95.0" layoutY="100.0" mnemonicParsing="false" text="存款">
+      <TextArea fx:id="display"
+                layoutX="200.0"
+                layoutY="100.0"
+                prefHeight="200.0"
+                prefWidth="200.0" />
+      <Button fx:id="depositBtn"
+              layoutX="95.0"
+              layoutY="100.0"
+              mnemonicParsing="false"
+              text="存款"
+              onAction="#deposit">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="withdrawBtn" layoutX="95.0" layoutY="179.0" mnemonicParsing="false" text="取款">
+      <Button fx:id="withdrawBtn"
+              layoutX="95.0"
+              layoutY="179.0"
+              mnemonicParsing="false"
+              text="取款"
+              onAction="#withdraw">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="transferBtn" layoutX="95.0" layoutY="258.0" mnemonicParsing="false" text="转账">
+      <Button fx:id="transferBtn"
+              layoutX="95.0"
+              layoutY="258.0"
+              mnemonicParsing="false"
+              text="转账"
+              onAction="#withdraw">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label layoutX="236.0" layoutY="36.0" text="ATM系统">
+      <Label layoutX="236.0"
+             layoutY="36.0"
+             text="ATM系统">
          <font>
             <Font size="30.0" />
          </font>

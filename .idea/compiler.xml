@@ -3,6 +3,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Part1" options="--add-exports java.base/jdk.internal.access=Part1" />
+      <module name="Part4" options="--add-exports java.datatransfer/java.awt=Part4" />
     </option>
   </component>
 </project>
