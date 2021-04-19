@@ -1,7 +1,6 @@
 package cn.edu.ncu.eureka.atm.controller;
 
 import cn.edu.ncu.eureka.atm.entity.ATM;
-import cn.edu.ncu.eureka.atm.entity.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +18,6 @@ public class LoginAction {
 
     public void login() throws Exception{
         ATM atm = ATM.getInstance();
-        atm.initData();
         String id = idTxt.getText();
         String password = passwordTxt.getText();
         if (atm.checkAccount(id,password)){
@@ -28,6 +26,7 @@ public class LoginAction {
             Scene scene = new Scene(root,600,400);
             stage.setScene(scene);
             stage.show();
+
         }
     }
 }

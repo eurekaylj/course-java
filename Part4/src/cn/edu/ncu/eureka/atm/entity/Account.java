@@ -3,7 +3,9 @@ package cn.edu.ncu.eureka.atm.entity;
 public class Account {
     private String id = null;
     private String name = null;
+    private boolean gender = true;
     private String password = null;
+
     private double money = 0;
 
     public Account(String id, String name, String password) {
@@ -12,11 +14,16 @@ public class Account {
         this.password = password;
     }
 
-    public Account(String id, String name, String password, double money) {
+    public Account(String id, String name, String password, double money,boolean gender) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.money = money;
+        this.gender = gender;
+    }
+
+    public boolean isGender() {
+        return gender;
     }
 
     public void setId(String id) {
@@ -39,6 +46,9 @@ public class Account {
         this.money = money;
     }
 
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
 
     public String getId() {
         return id;
@@ -51,4 +61,5 @@ public class Account {
     public double getMoney() {
         return money;
     }
+
 }

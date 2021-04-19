@@ -18,11 +18,12 @@ public class ATM {
 
     public ATM() {
         this.accounts = new Account[100];
+        initData();
     }
 
     public void initData() {
         for (int i = 0; i < accounts.length; i++) {
-            accounts[i] = new Account(String.format("No_%d", (i + 1)), "张三", "123456", 1000);
+            accounts[i] = new Account(String.format("No_%d", (i + 1)), "张三", "123456", 1000,true);
         }
     }
 
@@ -61,5 +62,13 @@ public class ATM {
 
     public Account getCurrentAccount() {
         return currentAccount;
+    }
+
+    public Account getAccount(String id) {
+        for (Account account : accounts) {
+            if (account.getId().equals(id))
+                return account;
+        }
+        return null;
     }
 }
