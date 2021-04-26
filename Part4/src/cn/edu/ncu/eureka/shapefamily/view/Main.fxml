@@ -23,6 +23,7 @@
    </center>
    <bottom>
       <Button fx:id="drawBtn"
+              onAction="#reDraw"
               mnemonicParsing="false"
               text="draw"
               BorderPane.alignment="CENTER" />
