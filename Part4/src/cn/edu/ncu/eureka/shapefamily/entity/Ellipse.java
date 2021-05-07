@@ -10,6 +10,46 @@ public class Ellipse implements Drawable{
     private double height;
     private Color color;
 
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
     public Ellipse(double x, double y, double width, double height) {
         this.x = x;
         this.y = y;
@@ -30,5 +70,15 @@ public class Ellipse implements Drawable{
     public void draw(GraphicsContext gc) {
         gc.setFill(color);
         gc.fillOval(x,y,width,height);
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
+    @Override
+    public double getLength() {
+        return 0;
     }
 }

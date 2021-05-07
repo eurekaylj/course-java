@@ -3,7 +3,7 @@ package cn.edu.ncu.eureka.shapefamily.entity;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Rectangle implements Drawable{
+public class Rectangle implements Drawable {
     private double x;
     private double y;
     private double width;
@@ -58,17 +58,19 @@ public class Rectangle implements Drawable{
         this.color = color;
     }
 
-    public Rectangle(double x, double y, double width, double height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-        this.color = Color.BLUE;
-    }
-
     @Override
     public void draw(GraphicsContext gc) {
         gc.setFill(color);
-        gc.fillRect(x,y,width,height);
+        gc.fillRect(x, y, width, height);
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
+    @Override
+    public double getLength() {
+        return 0;
     }
 }

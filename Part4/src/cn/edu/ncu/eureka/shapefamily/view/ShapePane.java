@@ -1,7 +1,6 @@
 package cn.edu.ncu.eureka.shapefamily.view;
 
 import cn.edu.ncu.eureka.shapefamily.entity.Drawable;
-import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
@@ -26,5 +25,6 @@ public class ShapePane extends Pane {
 
     public void setShape(Drawable shape) {
         this.shape = shape;
+        drawShape();
     }
 }
