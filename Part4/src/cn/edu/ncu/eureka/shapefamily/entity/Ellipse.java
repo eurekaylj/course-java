@@ -74,11 +74,11 @@ public class Ellipse implements Drawable{
 
     @Override
     public double getArea() {
-        return 0;
+        return width*height*3.14159/4;
     }
 
     @Override
     public double getLength() {
-        return 0;
+        return width*2*3.14159+4*(height-width);
     }
 }

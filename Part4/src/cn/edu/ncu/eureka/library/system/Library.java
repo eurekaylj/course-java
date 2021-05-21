@@ -1,4 +1,4 @@
-package cn.edu.ncu.eureka.library.entity;
+package cn.edu.ncu.eureka.library.system;
 
 import cn.edu.ncu.eureka.library.books.Book;
 import cn.edu.ncu.eureka.library.books.Cartoon;
@@ -9,34 +9,39 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Library {
+    private StringBuilder information = new StringBuilder();
     private Book[] books;
-    private StringBuffer info = new StringBuffer();
 
     public Library() {
         this.books = new Book[200];
         initData();
     }
 
-
-    /**
-     * 初始化图书馆信息
-     */
     public void initData() {
         Arrays.fill(books, null);
-        for (int i = 0; i < 5; i++) {
-            books[i] = new Fairytale(String.format("格林童话_%d", (i + 1)), String.format("NO_%d", (i + 1)),
-                    "人民出版社", "雅可布·格林，威廉·格林兄弟", 24);
+        for (int i = 0; i < 130; i++) {
+            books[i] = new Fairytale("安徒生童话", String.format("NO_%d", (i + 1)),
+                    "译林出版社", "安徒生", 28);
         }
 
-        for (int i = 5; i < 10; i++) {
-            books[i] = new Fairytale(String.format("大闹天宫_%d", (i + 1)), String.format("NO_%d", (i + 1)),
-                    "云南美术出版社", "李克弱，万籁鸣", 24);
+        for (int i = 130; i < 160; i++) {
+            books[i] = new Fairytale("一千零一夜", String.format("NO_%d", (i + 1)),
+                    "人民文学出版社", "王瑞琴", 47);
+        }
+
+        for (int i = 160; i < 180; i++) {
+            books[i] = new Cartoon("父与子", String.format("NO_%d", (i + 1)),
+                    "浙江教育出版社", "卜劳恩", 39);
+        }
+
+        for (int i = 180; i < 200; i++) {
+            books[i] = new Cartoon("小王子", String.format("NO_%d", (i + 1)),
+                    "云南美术出版社", "圣埃克苏佩里", 36);
         }
     }
 
-
     public void setBooks() {
-        String getBook = inputInfo("请输入所存书的基本信息(以‘，’分隔)：");
+        String getBook = inputInfo("请输入所要归还的书名");
         var temp = getBook.split(",");
 
         for (int i = 0; i < books.length; i++) {
@@ -49,7 +54,7 @@ public class Library {
                 break;
             } else if (books[i].getName().equals(temp[0])) {
                 books[i].setAccessibility(true);
-                info.append(inputInfo("请输入您的姓名")).append("已还书").append("\n");
+                information.append(inputInfo("请输入您的姓名")).append("  ").append(getBook).append("  借书 ").append(LocalDate.now()).append("\n");;
                 System.out.println("还书成功！");
                 break;
             }
@@ -68,6 +73,8 @@ public class Library {
     }
 
     public void display() {
+        System.out.printf("      【书名】     【ISBN】   【出版社】       【作者】" +
+                "   【价格】      【购入日期】\n");
         for (Book book : books) {
             if (book != null) {
                 if (isConsumed(book))
@@ -86,11 +93,11 @@ public class Library {
             if (book != null) {
                 if (borrow.equals(book.getName()) && book.isAccessibility()) {
                     String name = inputInfo("请输入您的姓名：");
-                    info.append(name).append("  ").append(borrow).append("  ").append("借书 ").append(LocalDate.now()).append("\n");
+                    information.append(name).append("  ").append(borrow).append("  ").append("借书 ").append(LocalDate.now()).append("\n");
                     System.out.println("借书成功");
                     book.setAccessibility(false);
                     sign = true;
-                    System.out.println(info.toString());
+                    System.out.println(information.toString());
                     break;
                 } else if (!book.getName().equals(borrow)) {
                     sign = false;
@@ -108,7 +115,7 @@ public class Library {
 
 
     public void ShowInfo() {
-        System.out.println("借书记录：\n" + "借书人信息 ：" + info + '\n');
+        System.out.println("【借书记录】\n" + information + '\n');
     }
 
     private String inputInfo(String text) {

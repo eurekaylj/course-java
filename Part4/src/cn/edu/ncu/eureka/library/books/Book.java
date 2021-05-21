@@ -52,17 +52,16 @@ public abstract class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "name='" + name + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", author='" + author + '\'' +
-                String.format(", price= %6.2f", price) +
-                ", dateCreated=" + dateCreated +
-                '}';
+        return "%10s".formatted(name) +
+                "%10s".formatted(ISBN) +
+                "%10s".formatted(publisher) +
+                "%10s".formatted(author) +
+                "%10.2f".formatted(price) +
+                "      "+dateCreated;
     }
 
     public abstract double lossRate();
 
     public abstract double currentPrice();
 }
+

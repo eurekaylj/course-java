@@ -66,11 +66,11 @@ public class Rectangle implements Drawable {
 
     @Override
     public double getArea() {
-        return 0;
+        return width*height;
     }
 
     @Override
     public double getLength() {
-        return 0;
+        return (width+height)*2;
     }
 }
