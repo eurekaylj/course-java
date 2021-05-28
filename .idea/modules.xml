@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JNAcourse/JNAcourse.iml" filepath="$PROJECT_DIR$/JNAcourse/JNAcourse.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCourse.iml" filepath="$PROJECT_DIR$/JavaCourse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Part0/Part0.iml" filepath="$PROJECT_DIR$/Part0/Part0.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part1/Part1.iml" filepath="$PROJECT_DIR$/Part1/Part1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part2/Part2.iml" filepath="$PROJECT_DIR$/Part2/Part2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part3/Part3.iml" filepath="$PROJECT_DIR$/Part3/Part3.iml" />
