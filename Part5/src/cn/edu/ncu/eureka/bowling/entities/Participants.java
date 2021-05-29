@@ -1,4 +1,4 @@
-package cn.edu.ncu.eureka.bowling.entity;
+package cn.edu.ncu.eureka.bowling.entities;
 
 public class Participants {
     private String id;
